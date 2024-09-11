@@ -46,7 +46,7 @@ body {
 
 .nav-row {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     column-gap: 30px;
     row-gap: 20px;
@@ -55,8 +55,10 @@ body {
 
 .nav-list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     column-gap: 40px;
+    row-gap: 10px;
     font-size: 16px;
     font-weight: 500;
     font-family: "Poppins", sans-serif;
