@@ -21,13 +21,27 @@
     --accent: var(--green);
 
     --box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+
+    /* Light mode */
+    --page-bg: var(--white);
+    --text-color: var(--black);
+    --title-1: var(--accent);
+}
+
+.dark {
+    --page-bg: #252526;
+    --text-color: var(--white);
+    --title-1: var(--white);
+    --box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.8);
 }
 
 html,
 body {
     font-family: "DM Sans", sans-serif;
     letter-spacing: -0.5px;
+
     color: var(--text-color);
+    background-color: var(--page-bg);
 
     display: flex;
     flex-direction: column;
@@ -50,7 +64,7 @@ body {
 
 .nav-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     column-gap: 30px;
     row-gap: 20px;
@@ -93,6 +107,40 @@ body {
     width: 100%;
     height: 2px;
     background-color: var(--accent);
+}
+
+.dark-mode-btn {
+    order: 1;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    width: 51px;
+    height: 26px;
+    background-color: #272727;
+    border-radius: 50px;
+}
+
+.dark-mode-btn::before {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: white;
+    transition: left 0.2s ease-in;
+}
+
+.dark-mode-btn--active::before {
+    left: 26px;
+}
+
+.dark-mode-btn__icon {
+    position: relative;
+    z-index: 9;
 }
 
 .logo {
@@ -185,7 +233,8 @@ body {
     padding: 12px 20px;
 
     border: 2px solid black;
-    color: var(--text-color);
+    color: var(--black);
+    background-color: white;
 
     transition: opacity 0.2 ease-in;
 }
@@ -210,7 +259,7 @@ body {
     font-size: 60px;
     font-weight: 700;
     line-height: 1.3;
-    color: var(--accent);
+    color: var(--title-1);
     text-align: center;
 }
 
@@ -331,6 +380,14 @@ body {
 }
 
 @media (max-width: 644px) {
+    .nav-row {
+        justify-content: space-between;
+    }
+
+    .dark-mode-btn {
+        order: 0;
+    }
+
     .header {
         min-height: unset;
     }
