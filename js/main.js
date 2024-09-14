@@ -11,7 +11,7 @@ if (localStorage.getItem(key) === "dark") {
     DisableDarkTheme();
 }
 
-// If you change system settings, change theme.
+// If you change system settings, change theme
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
     const newColorScheme = event.matches ? "dark" : "light";
 
