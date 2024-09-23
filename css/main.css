@@ -159,9 +159,10 @@ body {
     color: var(--header-text);
     min-height: 100vh;
 
-    background-image: url("./../img/header-bg.png");
+    background-image: url("./../img/bg17.jpg");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
 
     padding: 40px 0;
     display: flex;
